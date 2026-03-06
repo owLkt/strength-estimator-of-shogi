@@ -1,0 +1,28 @@
+# execute and library file
+build/
+__pycache__
+
+# configuration file
+#*.cfg
+
+# training folder
+go_19x19_*/
+
+# others
+.sgf
+.txt
+.vscode
+
+training_shogi
+rank_*
+query_shogi
+candidate_shogi
+random_data
+minizero/minizero/environment/shogi/test
+shogi_bt_*/
+shogi_rank_*/
+random_*/
+evaluator_*
+accuracy_*
+player*
+mcts_*/

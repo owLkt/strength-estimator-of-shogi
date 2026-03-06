@@ -1,0 +1,6 @@
+[submodule "minizero"]
+	path = minizero
+	url = git@github.com:rlglab/minizero-dev.git
+[submodule "extern/cnpy"]
+	path = extern/cnpy
+	url = https://github.com/rogersce/cnpy.git

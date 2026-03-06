@@ -1,0 +1,18 @@
+環境構築
+・./minizero/minizero/utils/vector_maps.h　に　#include <stdexcept>　を追加する
+・Dockerfileの設定を変更して自身の環境にあったバージョンをインストールする
+	・現環境はcuda12.8-ubuntu22.04、python、pytorch、cmake 3.25.2 、pybind11 v2.4.3
+・docker build -t my-image-name .　を実行(my-image-nameは任意に設定する)
+・./scripts/start-container.sh --image my-image-name　でコンテナに入る
+
+・./scripts/build.sh の49行目　git config core.hooksPath .githooks　をコメントアウトする
+・parse_csa.pyを実行し、training_shogi、candidate_shogi、test_shogiと.npyを作成(データの前処理)
+・create_rankinf.pyでr_∞のデータを作成
+・./scripts/build.sh shogi を実行
+・./scripts/train.py shogi cfg/hoge.cfg を実行しSEをトレーニングする(hoge.cfgは任意の設定ファイル)
+
+・学習完了後、評価を行う(ランク推定、指し手一致率)
+
+・対局をさせる場合、shogihomeをインストール
+・shogihomeにて作成したモデルをエンジンとして使用したい場合、shogi_bridge.shを設定する
+・shogi_bridge.shには設定ファイルの設定があるため、CONF_PATH=のパスを任意に設定する
